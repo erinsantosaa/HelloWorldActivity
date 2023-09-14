@@ -2,6 +2,9 @@ package edu.temple.helloworld
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
+import android.widget.AbsSeekBar
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -10,8 +13,8 @@ class MainActivity : AppCompatActivity() {
 
     // Declare view properties - the first one is done for you
     lateinit var displayTextView: TextView
-    lateinit var clickMeButton: TextView
-    lateinit var nameEditText: TextView
+    lateinit var clickMeButton: Button
+    lateinit var nameEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         
         // Respond to button click event per specifications
-
-
+        clickMeButton.setOnClickListener{
+            displayTextView.text = "Hello, ${nameEditText.text}"
+        }
     }
 }
